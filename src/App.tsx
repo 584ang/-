@@ -19,6 +19,9 @@ export default function App() {
         if (parsed.maxdivaniImg === '/src/assets/images/maxdivani_camel_leather_sofa_1780121744905.png' || !parsed.maxdivaniImg) {
           parsed.maxdivaniImg = INITIAL_CUSTOMIZE_STATE.maxdivaniImg;
         }
+        if (parsed.logoText === 'L’ATELIER ARTISAN' || parsed.logoText === 'DESIGN FURNITURE' || !parsed.logoText) {
+          parsed.logoText = INITIAL_CUSTOMIZE_STATE.logoText;
+        }
         if (parsed.contactAddress === '서울특별시 강남구 논현로 192, 메종 골드 타워 1-3층' || !parsed.contactAddress) {
           parsed.contactAddress = INITIAL_CUSTOMIZE_STATE.contactAddress;
         }

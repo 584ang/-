@@ -1,7 +1,7 @@
 import { CustomizeState, SeoState, SocialState, BrandConfig } from './types';
 
 export const INITIAL_CUSTOMIZE_STATE: CustomizeState = {
-  logoText: 'L’ATELIER ARTISAN',
+  logoText: 'DESIGN FURNITURE Gyeong-Ju',
   shopName: '디자인 가구 편집샵',
   goldAccentColor: '#D4AF37', // Medium gold
   goldAccentHover: '#AA882C', // Deep matte gold
