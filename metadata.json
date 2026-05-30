@@ -1,0 +1,6 @@
+{
+  "name": "디자인 가구 편집샵",
+  "description": "템퍼, 막스디바니, 인아트, 페르모사 등 명품 브랜드 가구를 소개하고, 관리자 맞춤 테마와 콘텐츠 편집 및 SEO-소셜 연동 미디어 설정이 가능한 고급스럽고 감각적인 가구 편집샵 홈페이지입니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;950&family=Noto+Serif+KR:wght@300;400;600;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+/* Elegant Fade and slide animation utility keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Custom Scrollbar for Black & Gold Theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #AA882C;
+}
+
+/* Base custom modifications */
+body {
+  background-color: #000000;
+  color: #e5e5e5;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', 'Noto Serif KR', serif;
+}
+
+.font-sans {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
