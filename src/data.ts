@@ -1,4 +1,21 @@
 import { CustomizeState, SeoState, SocialState, BrandConfig } from './types';
+import tempurCinemaImg from './assets/images/tempur_cinema_1780124763915.png';
+import tempurLuxuryBedImg from './assets/images/tempur_luxury_bed_1780120650887.png';
+import maxdivaniLeatherSofaImg from './assets/images/maxdivani_leather_sofa_1780120668679.png';
+import maxdivaniCamelSofaImg from './assets/images/maxdivani_camel_leather_sofa_1780121744905.png';
+import inartWoodenTableImg from './assets/images/inart_wooden_table_1780120685627.png';
+import fermosaFabricCouchImg from './assets/images/fermosa_fabric_couch_1780120712135.png';
+
+export const COMPILED_IMAGES: Record<string, string> = {
+  '/src/assets/images/tempur_cinema_1780124763915.png': tempurCinemaImg,
+  '/src/assets/images/tempur_luxury_bed_1780120650887.png': tempurLuxuryBedImg,
+  '/src/assets/images/tempur_interior.png': tempurLuxuryBedImg,
+  '/src/assets/images/tempur_storefront_1780134041328.png': tempurCinemaImg,
+  '/src/assets/images/maxdivani_leather_sofa_1780120668679.png': maxdivaniLeatherSofaImg,
+  '/src/assets/images/maxdivani_camel_leather_sofa_1780121744905.png': maxdivaniCamelSofaImg,
+  '/src/assets/images/inart_wooden_table_1780120685627.png': inartWoodenTableImg,
+  '/src/assets/images/fermosa_fabric_couch_1780120712135.png': fermosaFabricCouchImg,
+};
 
 export const INITIAL_CUSTOMIZE_STATE: CustomizeState = {
   logoText: 'DESIGN FURNITURE Gyeong-Ju',
@@ -16,20 +33,20 @@ export const INITIAL_CUSTOMIZE_STATE: CustomizeState = {
   
   tempurDesc: 'NASA 우주 기술의 점탄성 신소재로 온몸의 압력을 완벽하게 분산하고, 신체 온도를 최적으로 맞춰 비교할 수 없는 최고급 숙면 솔루션을 설계합니다.',
   tempurTag: 'NASA가 승인한 세계 유일의 수면 테크놀로지, 무중력 매트리스의 정수',
-  tempurImg: '/src/assets/images/tempur_cinema_1780124763915.png',
-  tempurShowcaseImg: '/src/assets/images/tempur_interior.png',
+  tempurImg: tempurCinemaImg,
+  tempurShowcaseImg: tempurLuxuryBedImg,
 
   maxdivaniDesc: '100% Made in Italy 정통 가구의 유산과 현대적인 디자인의 결합. 최고급 탑그레인 면피 공정과 이태리 세밀 공법으로 타협 없는 소파를 제작합니다.',
   maxdivaniTag: '이탈리아 장인 정신과 최상의 천연 가죽이 빚어낸 이태리 하이엔드 소파의 기준',
-  maxdivaniImg: '/src/assets/images/maxdivani_leather_sofa_1780120668679.png',
+  maxdivaniImg: maxdivaniLeatherSofaImg,
 
   inartDesc: '오크 원목 가구 분야 선도 브랜드로, 숲속의 자연스러움을 그대로 안방과 거실로 끌어오는 친환경 솔루션을 제공합니다. 시간이 흐를수록 기품이 깊어집니다.',
   inartTag: '숲의 깊은 매력을 담은 내추럴 솔리드 오크(오리지널 원목) 장인 가구',
-  inartImg: '/src/assets/images/inart_wooden_table_1780120685627.png',
+  inartImg: inartWoodenTableImg,
 
   fermosaDesc: '친환경 스마트 기능성 사하라 원단을 사용하여 스크래치와 변색에 대단히 강하면서도, 벨벳처럼 풍부하고 세련된 터치감을 제공하는 기능성 프리미엄 소파입니다.',
   fermosaTag: '방수, 이지클린, 감각적 라운드 디자인의 프리미엄 기능성 신소재 패브릭 소파',
-  fermosaImg: '/src/assets/images/fermosa_fabric_couch_1780120712135.png',
+  fermosaImg: fermosaFabricCouchImg,
 };
 
 export const INITIAL_SEO_STATE: SeoState = {

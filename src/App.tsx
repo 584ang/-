@@ -4,7 +4,8 @@ import {
   INITIAL_CUSTOMIZE_STATE, 
   INITIAL_SEO_STATE, 
   INITIAL_SOCIAL_STATE, 
-  BRAND_PRODUCTS_DEFAULT 
+  BRAND_PRODUCTS_DEFAULT,
+  COMPILED_IMAGES
 } from './data';
 import ShopHome from './components/ShopHome';
 import AdminDashboard from './components/AdminDashboard';
@@ -16,15 +17,14 @@ export default function App() {
       const saved = localStorage.getItem('latelier_customize');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.maxdivaniImg === '/src/assets/images/maxdivani_camel_leather_sofa_1780121744905.png' || !parsed.maxdivaniImg) {
-          parsed.maxdivaniImg = INITIAL_CUSTOMIZE_STATE.maxdivaniImg;
-        }
-        if (parsed.tempurImg === '/src/assets/images/tempur_luxury_bed_1780120650887.png' || !parsed.tempurImg) {
-          parsed.tempurImg = INITIAL_CUSTOMIZE_STATE.tempurImg;
-        }
-        if (parsed.tempurShowcaseImg === '/src/assets/images/tempur_storefront_1780134041328.png' || !parsed.tempurShowcaseImg) {
-          parsed.tempurShowcaseImg = INITIAL_CUSTOMIZE_STATE.tempurShowcaseImg;
-        }
+        
+        // Dynamically map old static string paths onto compiled assets
+        parsed.maxdivaniImg = COMPILED_IMAGES[parsed.maxdivaniImg] || parsed.maxdivaniImg || INITIAL_CUSTOMIZE_STATE.maxdivaniImg;
+        parsed.tempurImg = COMPILED_IMAGES[parsed.tempurImg] || parsed.tempurImg || INITIAL_CUSTOMIZE_STATE.tempurImg;
+        parsed.tempurShowcaseImg = COMPILED_IMAGES[parsed.tempurShowcaseImg] || parsed.tempurShowcaseImg || INITIAL_CUSTOMIZE_STATE.tempurShowcaseImg;
+        parsed.inartImg = COMPILED_IMAGES[parsed.inartImg] || parsed.inartImg || INITIAL_CUSTOMIZE_STATE.inartImg;
+        parsed.fermosaImg = COMPILED_IMAGES[parsed.fermosaImg] || parsed.fermosaImg || INITIAL_CUSTOMIZE_STATE.fermosaImg;
+
         if (parsed.fontStyle === 'serif' || !parsed.fontStyle) {
           parsed.fontStyle = 'mono';
         }

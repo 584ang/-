@@ -180,7 +180,7 @@ export default function BrandShowcase({
               onError={(e) => {
                 e.currentTarget.onerror = null;
                 if (brandId === 'tempur') {
-                  e.currentTarget.src = '/src/assets/images/tempur_cinema_1780124763915.png';
+                  e.currentTarget.src = customize.tempurImg;
                 }
               }}
               referrerPolicy="no-referrer"
