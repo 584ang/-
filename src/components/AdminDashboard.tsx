@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { CustomizeState, SeoState, SocialState, BrandId } from '../types';
 import { 
   Sliders, Settings, Type, Image as ImageIcon, Sparkles, 
-  RefreshCw, Globe, Share2, HelpCircle, FileText, ChevronRight, Check
+  RefreshCw, Globe, Share2, HelpCircle, FileText, ChevronRight, Check,
+  Copy, X
 } from 'lucide-react';
 
 interface AdminDashboardProps {
@@ -34,6 +35,27 @@ export default function AdminDashboard({
   const [activeTab, setActiveTab] = useState<'visual' | 'brands' | 'seo' | 'social'>('visual');
   const [selectedBrandEdit, setSelectedBrandEdit] = useState<BrandId>('tempur');
   const [showNotification, setShowNotification] = useState<string | null>(null);
+  const [showExportModal, setShowExportModal] = useState<boolean>(false);
+  const [copied, setCopied] = useState<boolean>(false);
+
+  const getConfigJson = () => {
+    return JSON.stringify({
+      customize,
+      seo,
+      social
+    }, null, 2);
+  };
+
+  const handleCopyToClipboard = () => {
+    try {
+      navigator.clipboard.writeText(getConfigJson());
+      setCopied(true);
+      triggerNotice('설정 JSON이 클립보드에 복사되었어요!');
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      triggerNotice('복사 실패! 아래 텍스트를 드래그해 수동 복사하세요.');
+    }
+  };
 
   const handleCustomizeChange = (key: keyof CustomizeState, value: string) => {
     setCustomize(prev => ({
