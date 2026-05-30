@@ -17,6 +17,7 @@ interface ShopHomeProps {
   onReset: () => void;
   showAdmin: boolean;
   setShowAdmin: (show: boolean) => void;
+  isAdminMode?: boolean;
 }
 
 export default function ShopHome({
@@ -29,7 +30,8 @@ export default function ShopHome({
   productsMap,
   onReset,
   showAdmin,
-  setShowAdmin
+  setShowAdmin,
+  isAdminMode = false
 }: ShopHomeProps) {
   const [selectedBrand, setSelectedBrand] = useState<BrandId>('tempur');
 
@@ -120,18 +122,20 @@ export default function ShopHome({
               </a>
             </div>
 
-            {/* Config Panel Toggle Trigger */}
-            <button
-              onClick={() => setShowAdmin(!showAdmin)}
-              className="p-2 px-3 rounded-lg flex items-center gap-1.5 text-xs text-black font-extrabold transition shadow-lg cursor-pointer animate-pulse"
-              style={{ backgroundColor: customize.goldAccentColor }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = customize.goldAccentHover}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = customize.goldAccentColor}
-              title="관리자 샌드박스 대시보드 토글"
-            >
-              <Sliders className="w-3.5 h-3.5" />
-              <span>{showAdmin ? '에디터 닫기' : '실시간 편집기 열기'}</span>
-            </button>
+            {/* Config Panel Toggle Trigger (Only visible in admin mode) */}
+            {isAdminMode && (
+              <button
+                onClick={() => setShowAdmin(!showAdmin)}
+                className="p-2 px-3 rounded-lg flex items-center gap-1.5 text-xs text-black font-extrabold transition shadow-lg cursor-pointer animate-pulse"
+                style={{ backgroundColor: customize.goldAccentColor }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = customize.goldAccentHover}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = customize.goldAccentColor}
+                title="관리자 샌드박스 대시보드 토글"
+              >
+                <Sliders className="w-3.5 h-3.5" />
+                <span>{showAdmin ? '에디터 닫기' : '실시간 편집기 열기'}</span>
+              </button>
+            )}
           </div>
 
         </div>
@@ -489,17 +493,19 @@ export default function ShopHome({
         </div>
       </footer>
 
-      {/* Fixed shortcut to toggle editor for extreme visibility */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <button
-          onClick={() => setShowAdmin(!showAdmin)}
-          className="flex items-center gap-2 p-3 px-4 rounded-full bg-yellow-500 text-black font-extrabold text-xs shadow-2xl tracking-tight cursor-pointer hover:scale-105 transition active:scale-95"
-          style={{ backgroundColor: customize.goldAccentColor }}
-        >
-          <Sliders className="w-4 h-4" />
-          <span>디자인 편집 대시보드 토글</span>
-        </button>
-      </div>
+      {/* Fixed shortcut to toggle editor for extreme visibility (Only in admin/editor mode) */}
+      {isAdminMode && (
+        <div className="fixed bottom-4 right-4 z-50">
+          <button
+            onClick={() => setShowAdmin(!showAdmin)}
+            className="flex items-center gap-2 p-3 px-4 rounded-full bg-yellow-500 text-black font-extrabold text-xs shadow-2xl tracking-tight cursor-pointer hover:scale-105 transition active:scale-95"
+            style={{ backgroundColor: customize.goldAccentColor }}
+          >
+            <Sliders className="w-4 h-4" />
+            <span>디자인 편집 대시보드 토글</span>
+          </button>
+        </div>
+      )}
 
     </div>
   );

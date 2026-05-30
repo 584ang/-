@@ -54,7 +54,31 @@ export default function App() {
     }
   });
 
-  const [showAdmin, setShowAdmin] = useState<boolean>(true); // Open by default in initial build to guide the user!
+  const [isAdminMode] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const hasParam = params.get('admin') === 'true' || params.get('edit') === 'true';
+      const isDevEnv = window.location.hostname.includes('ais-dev-') || window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1');
+      const isSharedOrProd = window.location.hostname.includes('ais-pre-') || !isDevEnv;
+      return hasParam || !isSharedOrProd;
+    }
+    return false;
+  });
+
+  const [showAdmin, setShowAdmin] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const hasParam = params.get('admin') === 'true' || params.get('edit') === 'true';
+      const isDevEnv = window.location.hostname.includes('ais-dev-') || window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1');
+      const isSharedOrProd = window.location.hostname.includes('ais-pre-') || !isDevEnv;
+      
+      if (isSharedOrProd) {
+        return hasParam;
+      }
+      return true; // Keep true in internal dev environment to show the sandbox naturally
+    }
+    return false;
+  });
   const [productsMap, setProductsMap] = useState<Record<BrandId, Product[]>>(
     BRAND_PRODUCTS_DEFAULT as Record<BrandId, Product[]>
   );
@@ -118,6 +142,7 @@ export default function App() {
             onReset={handleReset}
             showAdmin={showAdmin}
             setShowAdmin={setShowAdmin}
+            isAdminMode={isAdminMode}
           />
         </div>
 
