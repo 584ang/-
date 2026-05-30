@@ -5,7 +5,7 @@ export const INITIAL_CUSTOMIZE_STATE: CustomizeState = {
   shopName: '디자인 가구 편집샵',
   goldAccentColor: '#D4AF37', // Medium gold
   goldAccentHover: '#AA882C', // Deep matte gold
-  fontStyle: 'serif', // Classic serif/gothic typography vibes
+  fontStyle: 'mono', // Modern JetBrains Mono style
   heroTitle: '시대를 오가는 디자인, 공간이 예술이 되는 순간',
   heroSubtitle: '세계적인 프리미엄 명품 가구 브랜드들을 골드빛의 고급스러운 감각으로 큐레이션합니다. 템퍼, 막스디바니, 인아트, 페르모사를 만나보세요.',
   aboutTitle: '편집샵 브랜드 스토리 (Brand Philosophy)',
@@ -16,7 +16,8 @@ export const INITIAL_CUSTOMIZE_STATE: CustomizeState = {
   
   tempurDesc: 'NASA 우주 기술의 점탄성 신소재로 온몸의 압력을 완벽하게 분산하고, 신체 온도를 최적으로 맞춰 비교할 수 없는 최고급 숙면 솔루션을 설계합니다.',
   tempurTag: 'NASA가 승인한 세계 유일의 수면 테크놀로지, 무중력 매트리스의 정수',
-  tempurImg: '/src/assets/images/tempur_luxury_bed_1780120650887.png',
+  tempurImg: '/src/assets/images/tempur_cinema_1780124763915.png',
+  tempurShowcaseImg: '/src/assets/images/tempur_interior.png',
 
   maxdivaniDesc: '100% Made in Italy 정통 가구의 유산과 현대적인 디자인의 결합. 최고급 탑그레인 면피 공정과 이태리 세밀 공법으로 타협 없는 소파를 제작합니다.',
   maxdivaniTag: '이탈리아 장인 정신과 최상의 천연 가죽이 빚어낸 이태리 하이엔드 소파의 기준',
@@ -41,7 +42,7 @@ export const INITIAL_SEO_STATE: SeoState = {
 };
 
 export const INITIAL_SOCIAL_STATE: SocialState = {
-  instagramUrl: 'https://instagram.com/latelier_furniture_example',
+  instagramUrl: 'https://www.instagram.com/tempur_gj?igsh=Z2R4dDZ2ZWN6dHFt&utm_source=qr',
   youtubeUrl: 'https://youtube.com/c/latelier_living_example',
   kakaoUrl: 'https://pf.kakao.com/_latelier_example',
   blogUrl: 'https://blog.naver.com/latelier_editorial_example',

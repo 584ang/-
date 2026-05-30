@@ -39,10 +39,10 @@ export default function BrandShowcase({
       case 'tempur':
         return {
           title: 'TEMPUR',
-          subName: '템퍼 스마트 침대 가구',
+          subName: '템퍼 매트리스 침대',
           tag: customize.tempurTag,
           desc: customize.tempurDesc,
-          img: customize.tempurImg,
+          img: customize.tempurShowcaseImg || customize.tempurImg,
           facts: ['NASA 아웃스페이스 수면 개발 라이선스 독점 탑재', '척추 정렬 촉진 및 전신 가점 자가 몰딩 시스템', '세계 의료용 등급 덴마크 정밀 생산 가공 처방']
         };
       case 'maxdivani':
@@ -177,6 +177,12 @@ export default function BrandShowcase({
               src={meta.img} 
               alt={`${meta.title} Premium Visual`}
               className="absolute inset-0 w-full h-full object-cover object-center transition duration-1000 transform hover:scale-105"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                if (brandId === 'tempur') {
+                  e.currentTarget.src = '/src/assets/images/tempur_cinema_1780124763915.png';
+                }
+              }}
               referrerPolicy="no-referrer"
             />
             {/* Soft highlight border on image side */}

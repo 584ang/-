@@ -367,7 +367,9 @@ export default function AdminDashboard({
               </div>
 
               <div>
-                <label className="block text-[10px] text-neutral-400 mb-1">대표 영감 이미지 경로/URL</label>
+                <label className="block text-[10px] text-neutral-400 mb-1">
+                  {selectedBrandEdit === 'tempur' ? '메인 홈 상단 대표 이미지 경로/URL' : '대표 영감 이미지 경로/URL'}
+                </label>
                 <input 
                   type="text" 
                   value={selectedBrandEdit === 'tempur' ? customize.tempurImg : selectedBrandEdit === 'maxdivani' ? customize.maxdivaniImg : selectedBrandEdit === 'inart' ? customize.inartImg : customize.fermosaImg}
@@ -377,8 +379,19 @@ export default function AdminDashboard({
                   )}
                   className="w-full bg-neutral-900 border border-neutral-800 rounded p-2 focus:border-yellow-500 text-neutral-300 outline-none text-[10px] font-mono"
                 />
+                {selectedBrandEdit === 'tempur' && (
+                  <div className="mt-3">
+                    <label className="block text-[10px] text-neutral-400 mb-1">템퍼 전용 브랜드 상세 페이지 우측 이미지 경로/URL</label>
+                    <input 
+                      type="text" 
+                      value={customize.tempurShowcaseImg || ''}
+                      onChange={(e) => handleCustomizeChange('tempurShowcaseImg', e.target.value)}
+                      className="w-full bg-neutral-900 border border-neutral-800 rounded p-2 focus:border-yellow-500 text-neutral-300 outline-none text-[10px] font-mono"
+                    />
+                  </div>
+                )}
                 <span className="text-[9px] text-neutral-500 mt-1 block">
-                  ※ AI가 생성한 초고화질 명품 인테리어 렌더링 파일명이 적용되어 있습니다.
+                  ※ AI가 생성한 초고화질 명품 인테리어 렌더링 또는 첨부 매장 실사 파일명이 적용되어 있습니다.
                 </span>
               </div>
             </div>

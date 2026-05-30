@@ -37,6 +37,7 @@ export interface CustomizeState {
   tempurDesc: string;
   tempurTag: string;
   tempurImg: string;
+  tempurShowcaseImg: string;
   maxdivaniDesc: string;
   maxdivaniTag: string;
   maxdivaniImg: string;

@@ -33,7 +33,7 @@ export default function ShopHome({
   setShowAdmin,
   isAdminMode = false
 }: ShopHomeProps) {
-  const [selectedBrand, setSelectedBrand] = useState<BrandId>('tempur');
+  const [selectedBrand, setSelectedBrand] = useState<BrandId>('maxdivani');
 
   // Dynamic Fonts Configuration based on selection
   const getFontClass = () => {
@@ -47,8 +47,8 @@ export default function ShopHome({
   };
 
   const BRANDS_LIST = [
-    { id: 'tempur', name: '템퍼', eng: 'TEMPUR', type: 'Premium Bedding' },
     { id: 'maxdivani', name: '막스디바니', eng: 'MAXDIVANI', type: 'Italian Leather' },
+    { id: 'tempur', name: '템퍼', eng: 'TEMPUR', type: 'Premium Bedding' },
     { id: 'inart', name: '인아트', eng: 'INART', type: 'Solid Oak Craft' },
     { id: 'fermosa', name: '페르모사', eng: 'FERMOSA', type: 'Sahara Fabric' },
   ] as const;
@@ -247,8 +247,8 @@ export default function ShopHome({
               {/* Quick Stats Cards with Tab Navigation Link triggers */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-neutral-900">
                 {[
-                  { label: 'TEMPUR', desc: 'NASA 수면 의학 공인', brand: 'tempur' },
                   { label: 'MAXDIVANI', desc: '100% 이태리 장인 가죽', brand: 'maxdivani' },
+                  { label: 'TEMPUR', desc: 'NASA 수면 의학 공인', brand: 'tempur' },
                   { label: 'INART', desc: '북미산 원목 참나무', brand: 'inart' },
                   { label: 'FERMOSA', desc: '친환경 스마트 사하라', brand: 'fermosa' },
                 ].map((stat, idx) => (
@@ -461,8 +461,8 @@ export default function ShopHome({
           <div className="md:col-span-2 space-y-3">
             <h5 className="font-semibold text-neutral-300 font-serif">취급 특성 브랜드</h5>
             <ul className="space-y-2 text-neutral-500 text-[11px]">
-              <li><button onClick={() => setSelectedBrand('tempur')} className="hover:text-yellow-500 text-left">템퍼 (NASA 수면의학)</button></li>
               <li><button onClick={() => setSelectedBrand('maxdivani')} className="hover:text-yellow-500 text-left">막스디바니 (이태리 명장 가죽)</button></li>
+              <li><button onClick={() => setSelectedBrand('tempur')} className="hover:text-yellow-500 text-left">템퍼 (NASA 수면의학)</button></li>
               <li><button onClick={() => setSelectedBrand('inart')} className="hover:text-yellow-500 text-left">인아트 (정품 화이트 오크)</button></li>
               <li><button onClick={() => setSelectedBrand('fermosa')} className="hover:text-yellow-500 text-left">페르모사 (사하라 발수 스펙)</button></li>
             </ul>

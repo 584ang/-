@@ -19,6 +19,15 @@ export default function App() {
         if (parsed.maxdivaniImg === '/src/assets/images/maxdivani_camel_leather_sofa_1780121744905.png' || !parsed.maxdivaniImg) {
           parsed.maxdivaniImg = INITIAL_CUSTOMIZE_STATE.maxdivaniImg;
         }
+        if (parsed.tempurImg === '/src/assets/images/tempur_luxury_bed_1780120650887.png' || !parsed.tempurImg) {
+          parsed.tempurImg = INITIAL_CUSTOMIZE_STATE.tempurImg;
+        }
+        if (parsed.tempurShowcaseImg === '/src/assets/images/tempur_storefront_1780134041328.png' || !parsed.tempurShowcaseImg) {
+          parsed.tempurShowcaseImg = INITIAL_CUSTOMIZE_STATE.tempurShowcaseImg;
+        }
+        if (parsed.fontStyle === 'serif' || !parsed.fontStyle) {
+          parsed.fontStyle = 'mono';
+        }
         if (parsed.logoText === 'L’ATELIER ARTISAN' || parsed.logoText === 'DESIGN FURNITURE' || !parsed.logoText) {
           parsed.logoText = INITIAL_CUSTOMIZE_STATE.logoText;
         }
@@ -51,7 +60,14 @@ export default function App() {
   const [social, setSocial] = useState<SocialState>(() => {
     try {
       const saved = localStorage.getItem('latelier_social');
-      return saved ? JSON.parse(saved) : INITIAL_SOCIAL_STATE;
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.instagramUrl === 'https://instagram.com/latelier_furniture_example' || !parsed.instagramUrl) {
+          parsed.instagramUrl = INITIAL_SOCIAL_STATE.instagramUrl;
+        }
+        return parsed;
+      }
+      return INITIAL_SOCIAL_STATE;
     } catch {
       return INITIAL_SOCIAL_STATE;
     }
