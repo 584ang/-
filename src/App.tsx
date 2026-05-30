@@ -65,6 +65,9 @@ export default function App() {
         if (parsed.instagramUrl === 'https://instagram.com/latelier_furniture_example' || !parsed.instagramUrl) {
           parsed.instagramUrl = INITIAL_SOCIAL_STATE.instagramUrl;
         }
+        if (parsed.blogUrl === 'https://blog.naver.com/latelier_editorial_example' || !parsed.blogUrl) {
+          parsed.blogUrl = INITIAL_SOCIAL_STATE.blogUrl;
+        }
         return parsed;
       }
       return INITIAL_SOCIAL_STATE;

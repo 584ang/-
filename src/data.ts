@@ -45,7 +45,7 @@ export const INITIAL_SOCIAL_STATE: SocialState = {
   instagramUrl: 'https://www.instagram.com/tempur_gj?igsh=Z2R4dDZ2ZWN6dHFt&utm_source=qr',
   youtubeUrl: 'https://youtube.com/c/latelier_living_example',
   kakaoUrl: 'https://pf.kakao.com/_latelier_example',
-  blogUrl: 'https://blog.naver.com/latelier_editorial_example',
+  blogUrl: 'https://blog.naver.com/leesi8664',
 };
 
 export const BRAND_PRODUCTS_DEFAULT: Record<string, any[]> = {

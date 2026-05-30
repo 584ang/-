@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CustomizeState, SeoState, SocialState, BrandId, Product } from '../types';
 import BrandShowcase from './BrandShowcase';
 import { 
-  Instagram, Youtube, MessageSquare, Globe, Sliders, Eye, Sparkles, 
+  Instagram, MessageSquare, Globe, Sliders, Eye, Sparkles, 
   MapPin, Phone, Clock, ShieldCheck, Award, Heart, HelpCircle, CornerDownRight 
 } from 'lucide-react';
 
@@ -92,15 +92,6 @@ export default function ShopHome({
                 title="인스타그램 방문하기"
               >
                 <Instagram className="w-3.5 h-3.5" />
-              </a>
-              <a 
-                href={social.youtubeUrl} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="p-1.5 rounded-full bg-neutral-900 border border-neutral-800 hover:border-yellow-500 text-neutral-400 hover:text-white transition"
-                title="유튜브 쇼룸 보기"
-              >
-                <Youtube className="w-3.5 h-3.5" />
               </a>
               <a 
                 href={social.kakaoUrl} 
@@ -485,7 +476,6 @@ export default function ShopHome({
             </p>
             <div className="flex gap-2">
               <a href={social.instagramUrl} target="_blank" rel="noreferrer" className="p-2 rounded bg-neutral-900 border border-neutral-850 text-neutral-400 hover:text-white transition">Instagram</a>
-              <a href={social.youtubeUrl} target="_blank" rel="noreferrer" className="p-2 rounded bg-neutral-900 border border-neutral-850 text-neutral-400 hover:text-white transition">YouTube</a>
               <a href={social.blogUrl} target="_blank" rel="noreferrer" className="p-2 rounded bg-neutral-900 border border-neutral-850 text-neutral-400 hover:text-white transition">Blog</a>
             </div>
           </div>

@@ -488,15 +488,6 @@ export default function AdminDashboard({
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] text-neutral-400 mb-1">유튜브 쇼룸 가이드 채널</label>
-                  <input 
-                    type="text" 
-                    value={social.youtubeUrl}
-                    onChange={(e) => handleSocialChange('youtubeUrl', e.target.value)}
-                    className="w-full bg-neutral-900 border border-neutral-800 rounded p-1.5 focus:border-yellow-500 text-neutral-300 outline-none text-[11px] font-mono"
-                  />
-                </div>
-                <div>
                   <label className="block text-[10px] text-neutral-400 mb-1">카카오 채널 1:1 컨설팅</label>
                   <input 
                     type="text" 
